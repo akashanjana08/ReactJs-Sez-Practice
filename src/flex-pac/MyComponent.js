@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
-export default class MyComponent extends Component {
-
+import userAction from '../actions/action.user';
+import {connect} from 'react-redux';
+import _ from 'lodash';
+class MyComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +13,12 @@ export default class MyComponent extends Component {
         this.dispatchedNote = [];
     }
 
+    componentDidMount(){
+        const Ob2={a:1,k:23}
+        const Ob1={a:8,b:2,c:3}
+        const nObj = _.assign({},Ob1,Ob2)
+        console.log(nObj);
+    }
 
     render() {
         return (
@@ -29,6 +36,7 @@ export default class MyComponent extends Component {
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', }}>
                             <h3>  Total dispatch Notes : {this.state.totalDispatchedNotes}  </h3>
+                            {this.props.username ? this.props.username :this.props.loading}
                         </div>
                     </div>
                 </div>
@@ -60,5 +68,25 @@ export default class MyComponent extends Component {
             totalAmount = totalAmount % this.notes[i];
         }
         this.setState({ totalDispatchedNotes: tDispatchNotes })
+        this.props.getUsername();
     }
 }
+
+function mapstostate(state){
+    return({
+        username: state.UsernameReducer.userName,
+        loading : state.UsernameReducer.loading,
+    })
+}
+
+function mapDispatchToProps(dispatch){
+    return (
+        {
+            getUsername : ()=>{
+                dispatch(userAction())
+            }
+        }
+    )
+}
+
+export default connect(mapstostate,mapDispatchToProps)(MyComponent);
