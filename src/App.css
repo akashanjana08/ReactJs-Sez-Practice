@@ -31,3 +31,34 @@
     transform: rotate(360deg);
   }
 }
+
+.addmore{
+  background: #dce6f2 url('./add-btn.png') no-repeat 10px 9px;
+  margin: 30px 0px 0px 0px;
+  padding: 8px 12px 10px 31px;
+  border: none;
+  font-size: 13px;
+  color: #043163;
+  border-radius: 4px;
+  cursor: pointer;
+  outline:none;
+}
+
+.dummy-popup{
+	margin: 100px auto;
+    padding: 20px;
+    width: 575px;
+    border-radius: 5px;
+	box-shadow:0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+	font-family:Segoe UI;
+	font-size:14px;
+	background:#fff;
+	min-height:400px;
+	}
+.dummy-popup p{
+    margin: 0px 0px 18px 0px;
+    color: #696969;
+}
+.dummy-popup p span{
+ font-weight:bold;
+}

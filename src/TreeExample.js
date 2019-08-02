@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import { Treebeard, decorators } from 'react-treebeard';
 import CntextMenu from './ContextMenuExample';
-
+//[{"id":"2472","name":"Cross18.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2466","name":"CrosscodeDB1.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2465","name":"CrosscodeDB_VB.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2461","name":"CrosscodeDB_VB_80.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2467","name":"CrosscodeDB_VB_90.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2444","name":"FInalConsumerApp","assetType":"application","assetSubType":"CSHARP","dependencyStatus":false},{"id":"2443","name":"FinalMVC2.0","assetType":"application","assetSubType":"CSHARP","dependencyStatus":false},{"id":"2445","name":"FluentAPI","assetType":"application","assetSubType":"CSHARP","dependencyStatus":false},{"id":"2475","name":"FluentAPISampleDB.Admin","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2460","name":"FluentAPISampleDB.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2476","name":"FluentAPISampleDB.todo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2464","name":"HibernateMSSQL.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2463","name":"Hibernate_JNDI.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2442","name":"MVC_Delta","assetType":"application","assetSubType":"CSHARP","dependencyStatus":false},{"id":"2446","name":"producer","assetType":"application","assetSubType":"java","dependencyStatus":false},{"id":"2471","name":"ReportServer.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2473","name":"ReportServerTempDB.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2470","name":"Rsystem_DB.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2462","name":"Sample.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2469","name":"Sample1.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2474","name":"Sample2.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false},{"id":"2468","name":"SchoolDB1.dbo","assetType":"database","assetSubType":"MSSQL","dependencyStatus":false}];
 const data = {
     id: 1,
     name: 'root',
-    toggled: false,
+    toggled: true,
     children: [
         {
             id: 2,
@@ -42,7 +42,7 @@ const data = {
 
 // Example: Customising The Header Decorator To Include Icons
 decorators.Header = (props) => {
-    debugger
+
     const style = props.style;
     const iconType = props.node.children ? 'folder' : 'file-text';
     const iconClass = `fa fa-${iconType}`;
@@ -86,6 +86,7 @@ export default class TreeExample extends PureComponent {
                     data={data}
                     onToggle={this.onToggle}
                     decorators={decorators}
+                    svgToggle={true}
                 />
             </div>
         );

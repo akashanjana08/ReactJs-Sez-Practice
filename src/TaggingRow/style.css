@@ -1,0 +1,16 @@
+.tagging-section{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+.tagging-section .tagging{
+    margin: 0px 16px 0px 0px;
+    padding: 0px;
+    width: 48%;
+	position:relative;
+}
+
+.cancel{
+    margin: 28px 0px 0px 0px;
+	cursor: pointer;
+}
